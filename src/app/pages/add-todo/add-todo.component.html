@@ -1,1 +1,59 @@
-<p>add-todo works!</p>
+
+<div class="page container mt-5">
+    <div class="calendar col-lg-6 col-md-8 col-sm-12">
+        <h1 class="text-center">calendar</h1>
+    </div>
+    <div class="AddTodoForm col-lg-6 col-md-8 col-sm-12">
+        
+        <div class="AddTodoForm-item">
+            <input type="text" [(ngModel)]="todoItem.title"  name="title" class="form-control" id="" placeholder="Title">  
+        </div>
+    
+        <div class="AddTodoForm-item">
+            <div class="mb-3">
+                <img src="assets/google-docs-1.svg" alt="" class="">
+                <span class="AddTodoForm-text">Description</span> 
+            </div>
+             
+            <textarea [(ngModel)]="todoItem.description" type="text" name="" id="" class="form-control" placeholder="Description"></textarea>
+        </div>
+    
+        <div class="AddTodoForm-item">
+            <div class="mb-3">
+                <img src="assets/folder.svg" alt="">
+                <span class="AddTodoForm-text">Projects</span>  
+            </div>
+
+            <input [(ngModel)]="todoItem.Project" type="text" class="form-control" name="Project" id="" placeholder="Project">  
+        </div>
+    
+        <div class="AddTodoForm-item">
+            <div class="mb-3">
+                <img src="assets/tag.svg" alt="">
+                <span class="AddTodoForm-text">Tags</span>  
+            </div>
+            <!-- <input type="text" name="" class="form-control" id=""  placeholder="Tags">   -->
+            <div class="add-tags">
+                <span class="add-tags-icon">+</span>
+                <span class="add-tags-text">Add Tags</span>
+            </div>
+            
+        </div>
+
+     <div class="text-center p-4">
+        <button class="Finish-btn" *ngIf="!todoItem.id" (click)="addItem()">
+            Finish
+        </button>
+
+        <button class="Finish-btn" *ngIf="todoItem.id" (click)="updateItem()">
+            Update
+        </button>
+
+        
+     </div>
+
+        
+    </div>
+    
+
+</div>

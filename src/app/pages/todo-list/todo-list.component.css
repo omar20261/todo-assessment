@@ -1,0 +1,48 @@
+
+.todo-item{
+    width: 250px;
+    min-height: 200px;
+    float: left;
+    padding: 25px 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+.tags{
+    background: #f15160;
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.title{
+    color: #55595F;
+    font-size: 19px;
+}
+.date{
+    color: rgba(0,0,0,0.2);
+}
+
+.add-btn{
+    background: #ff4e6a;
+    width: 50px;
+    border-radius: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.add-btn .icon{
+    color: #fff;
+    font-size: 40px;
+}
+
+.no-items-found{
+    text-align: center;
+    padding-top: 100px;
+    color: rgba(0,0,0,0.3);
+}

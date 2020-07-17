@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-
-  constructor() { }
+  todoItems:any=[]
+  constructor() {
+    this.todoItems = JSON.parse(localStorage.getItem('todolist'));
+  }
 
   ngOnInit(): void {
   }

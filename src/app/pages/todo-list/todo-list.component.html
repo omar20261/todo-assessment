@@ -1,1 +1,20 @@
-<p>todo-list works!</p>
+<div class="page container pt-5">
+    <h1 class="text-center"> Hey Omar, this is your to-do list</h1>
+    
+    <div class="todo-item col-md-4 col-sm-6" 
+    *ngFor="let item of todoItems;let index=index;" [routerLink]='["/AddItem"]' [queryParams]="{id:item.id}">
+        <div class="m-auto">
+            <span class="tags">PRD</span>
+            <p class="title">{{item.title}}</p>
+            <span class="date">2018/9/17 pm9:00</span>
+        </div>
+    </div>
+    <p *ngIf="!todoItems||todoItems.length==0" class="no-items-found"> No Items Found</p>
+
+
+<div class="add-btn" [routerLink]='["/AddItem"]'>
+    <span class="icon">+</span>
+</div>
+ 
+
+</div>

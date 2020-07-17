@@ -1,0 +1,56 @@
+.calendar{
+    margin: auto;
+}
+.AddTodoForm{
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 30px 0px 30px;
+    
+}
+.AddTodoForm-item{
+    display: inline-grid;
+    width: 100%;
+    padding: 10px;
+}
+.AddTodoForm-text{
+    float: left;
+    color: rgba(0,0,0,0.2);
+}
+.AddTodoForm-item input, .AddTodoForm-item textarea{
+    float: left;
+    padding-left: 20px;
+    border: 0;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    border-radius: 0;
+    box-shadow: none;
+}
+.AddTodoForm-item input[name="title"]{
+  font-size: 32px;;  
+}
+.AddTodoForm-item img{
+    width: 20px;
+    float: left;
+    margin-right: 10px;
+}
+.add-tags{
+    margin-left: 20px;
+}
+.add-tags-icon{
+    color: #ff4e6a;
+    float: left;
+    font-size: 30px;
+    cursor: pointer;
+}
+.add-tags-text{
+    color: #000;
+    float: left;
+    margin: 10px 5px;
+}
+.Finish-btn{
+    background: #ff4e6a;
+    border: 0;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 5px;
+    font-size: 20px;
+}
