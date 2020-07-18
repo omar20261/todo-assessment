@@ -1,5 +1,6 @@
 .calendar{
     margin: auto;
+    height: 100px;
 }
 .AddTodoForm{
     margin: auto;
@@ -45,6 +46,7 @@
     color: #000;
     float: left;
     margin: 10px 5px;
+    cursor: pointer;
 }
 .Finish-btn{
     background: #ff4e6a;
@@ -53,4 +55,19 @@
     padding: 10px 50px;
     border-radius: 5px;
     font-size: 20px;
+}
+
+.tag{
+    float: left;
+    color: #fff;
+    padding: 1px 5px;
+    font-size: 17px;
+    border-radius: 3px;
+    margin-left: 8px;
+}
+.delete-tag{
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
 }

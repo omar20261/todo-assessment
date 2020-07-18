@@ -13,13 +13,17 @@
     padding: 3px 9px;
     border-radius: 3px;
     font-size: 14px;
+    margin-right: 5px;
 }
 .title{
     color: #55595F;
-    font-size: 19px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .date{
     color: rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 15px;
 }
 
 .add-btn{

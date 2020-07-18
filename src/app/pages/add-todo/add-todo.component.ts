@@ -41,6 +41,14 @@ export class AddTodoComponent implements OnInit {
     this._location.back();//swal('Success', '', 'success');
   }
 
+  onAddTag(e){
+    console.log('========',e);
+    if(!this.todoItem.tags){this.todoItem.tags=[]}
+    this.todoItem.tags.push(e);
+  }
 
+  RemoveTag(i){
+    this.todoItem.tags.splice(i,1);
+  }
 
 }

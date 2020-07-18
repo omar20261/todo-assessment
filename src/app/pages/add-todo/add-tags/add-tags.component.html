@@ -1,0 +1,39 @@
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Tags Modal</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <span> Enter a tag  </span>
+          <input [(ngModel)]="item.text" type="text" class="form-control" name="Project" id="" placeholder="Project">  
+
+          <div class="choose-color">
+            <span> Choose tag color <b>{{item.color}}</b></span>
+            <div>
+              <div class="color-box" *ngFor="let color of colors;" 
+              (click)="item.color = color" 
+              [style.background-color]="color"
+              [style.border]="item.color===color?'6px solid #000':null"></div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="addTag()">Add</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  

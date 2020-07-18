@@ -1,4 +1,3 @@
-
 <div class="page container mt-5">
     <div class="calendar col-lg-6 col-md-8 col-sm-12">
         <h1 class="text-center">calendar</h1>
@@ -32,8 +31,15 @@
                 <img src="assets/tag.svg" alt="">
                 <span class="AddTodoForm-text">Tags</span>  
             </div>
-            <!-- <input type="text" name="" class="form-control" id=""  placeholder="Tags">   -->
-            <div class="add-tags">
+            <div>
+                <div *ngFor="let tag of todoItem.tags;let index=index;" 
+                [style.background-color]="tag.color" 
+                class="tag">{{tag.text}} 
+                <span class="delete-tag" (click)="RemoveTag(index)">x</span>
+            </div>
+            </div>
+            <app-add-tags (onAddTag)="onAddTag($event)"></app-add-tags>
+            <div class="add-tags"  data-toggle="modal" data-target="#myModal">
                 <span class="add-tags-icon">+</span>
                 <span class="add-tags-text">Add Tags</span>
             </div>
