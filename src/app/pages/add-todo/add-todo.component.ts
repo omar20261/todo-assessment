@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-
+declare var swal: any;
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
@@ -19,30 +19,54 @@ export class AddTodoComponent implements OnInit {
     
   }
 
+  getList(){
+    return JSON.parse(localStorage.getItem('todolist'));
+  }
+
+  saveList(list){
+    localStorage.setItem('todolist', JSON.stringify(list) );
+  }
+
   getItem(id){
-    let list:any = JSON.parse(localStorage.getItem('todolist'));
+    let list:any = this.getList();
     this.todoItem = list.find((x)=>x.id==id);
   }
 
   updateItem(){
-    let list:any = JSON.parse(localStorage.getItem('todolist'));
+    let list:any = this.getList();;
     let index = list.findIndex(x=>x.id==this.todoItem.id)
     list[index] = this.todoItem;
-    localStorage.setItem('todolist', JSON.stringify(list) );
+    this.saveList(list);
+    swal('Success', '', 'success');
     this._location.back();
   }
 
   addItem(){
-    if(!this.todoItem.title){return;}
-    let list:any = JSON.parse(localStorage.getItem('todolist'));
+    if(!this.todoItem.title){return swal('no title entered', 'please enter the todo title', 'error');;}
+    let list:any = this.getList();
     this.todoItem.id =Math.random().toString(36).slice(-10);
     if(list){list.push(this.todoItem);}else{list=[this.todoItem]}
-    localStorage.setItem('todolist', JSON.stringify(list) );
-    this._location.back();//swal('Success', '', 'success');
+    this.saveList(list);
+    this._location.back();swal('Success', '', 'success');
+  }
+
+  removeItem(id){
+    swal({
+      title: 'Do you wnat to delete this Item ?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it' }).then(()=>{
+        let list:any = this.getList();
+        let index = list.findIndex(x=>x.id==this.todoItem.id)
+        list.splice(index,1);
+        this.saveList(list);
+        swal('Success', '', 'success');
+        this._location.back();
+      })
   }
 
   onAddTag(e){
-    console.log('========',e);
     if(!this.todoItem.tags){this.todoItem.tags=[]}
     this.todoItem.tags.push(e);
   }

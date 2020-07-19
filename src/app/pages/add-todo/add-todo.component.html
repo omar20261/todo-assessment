@@ -1,6 +1,26 @@
 <div class="page container mt-5">
     <div class="calendar col-lg-6 col-md-8 col-sm-12">
-        <h1 class="text-center">calendar</h1>
+        <h3 class="text-center pt-3">September</h3>
+        <div>
+            <span>F</span>
+            <span>S</span>
+            <span>S</span>
+            <span>M</span>
+            <span>T</span>
+            <span>W</span>
+            <span>T</span>
+            <span>F</span>
+            
+            <span>13</span>
+            <span >14</span>
+            <span class="active-week">15</span>
+            <span class="active-week">16</span>
+            <span class="active-week">17</span>
+            <span class="active-week active">18</span>
+            <span class="active-week">19</span>
+            <span class="active-week">20</span>
+        </div>
+
     </div>
     <div class="AddTodoForm col-lg-6 col-md-8 col-sm-12">
         
@@ -55,6 +75,7 @@
             Update
         </button>
 
+        <span class="remove-item" *ngIf="todoItem.id" (click)="removeItem(todoItem.id)">Remove</span>
         
      </div>
 

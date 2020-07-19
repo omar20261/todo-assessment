@@ -1,11 +1,38 @@
 .calendar{
     margin: auto;
-    height: 100px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    margin-bottom: 10px;
 }
+.calendar div{
+    width: 460px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.calendar span{
+    float: left;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    padding: 10px;
+    font-size: 22px;
+    color: rgba(0,0,0,0.25);
+}
+.calendar span.active-week{
+    color: #000;
+}
+.calendar span.active{
+    color: #fff;
+    background-color: #ff4e6a;
+    border-radius: 100%;
+}
+
+
 .AddTodoForm{
     margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
     padding: 50px 30px 0px 30px;
+    margin-bottom: 20px;
     
 }
 .AddTodoForm-item{
@@ -69,5 +96,13 @@
     color: #fff;
     font-size: 17px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-item{
+    float: right;
+    color: #ff4e6a;
+    font-weight: bold;
+    margin-top: 13px;
     cursor: pointer;
 }

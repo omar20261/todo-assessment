@@ -1,4 +1,5 @@
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+declare var swal: any;
 
 @Component({
   selector: 'app-add-tags',
@@ -16,6 +17,9 @@ export class AddTagsComponent implements OnInit {
   }
 
   addTag(){
+    if(!this.item.text){return swal('no tag name entered', 'please enter your tag name', 'error');}
+    if(!this.item.text){return swal('no tag color entered ', 'please enter your tag color', 'error');}
     this.onAddTag.emit({...this.item});
+    this.item={}
   }
 }
